@@ -1,0 +1,89 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>To-Do List | A TDD Code Kata</title>
+	<meta name="description" content="A TDD Code Kata">
+	<meta name="author" content="KevinBoucher.com">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/style.css">
+    
+	<script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <header class="clearfix">
+        <h1>ToDoList</h1>
+        <div id="tools">
+            <a id="options-button">Export</a>
+            <div class="menu hide">
+                <ul>
+                    <li>
+                        <a id="import-link" title="Import a saved 'todolist.json' file.">Импорт</a>
+                        <input type="file" id="list-importer" class="hide" />
+                    </li>
+                    <li>
+                        <a id="export-link" title="Save your lists to a back-up file.">Экспорт/Копия</a>
+                    </li>
+                    <li><a id="settings-link">Настройки</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="main" role="main">
+        <div id="form">
+            <form id="add-item-form" action="index.html">
+                
+                <input type="text" id="add-item-textbox" placeholder="Введите новое задание" />
+                <div class="button-box">
+                    <input type="submit" id="add-item-button" class="button" value="+ Добавить" />
+                </div>
+
+            </form>
+        </div>
+        <div id="lists">
+            <div id="list-header" class="clearfix">
+                <ul class="tabs" role="tablist">
+                    <li class="selected" data-panel="todo" role="tab"><a id="todo-tab">Запланировано</a></li>
+                    <li data-panel="backlog" role="tab"><a id="backlog-tab">Выполняется</a></li>
+                    <li data-panel="completed" role="tab"><a id="completed-tab">Сделано</a></li>
+                </ul>
+                <div id="bulk-actions" class="hide">
+                    <a id="bulk-actions-link" role="button" title="Perform actions on all checked items">Actions</a>
+                    <div class="menu hide">
+                        <ul>
+                            <li><a id="move-to-todo-link">Переместить Запланировано</a></li>
+                            <li><a id="move-to-backlog-link">Переместить Выполняется</a></li>
+                            <li><a id="move-to-completed-link">Переместить Сделано</a></li>
+                            <li><a id="delete-link">Удалить</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-panel" id="todo" role="tabpanel"><ul class="list"></ul></div>
+            <div class="tab-panel hide" id="backlog" role="tabpanel"><ul class="list"></ul></div>
+            <div class="tab-panel hide" id="completed" role="tabpanel"><ul class="list"></ul></div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+<script>window.jQuery.ui || document.write('<script src="js/libs/jquery-ui-1.8.21.min.js"><\/script>')</script>
+
+<script src="js/libs/mustache.js"></script>
+<script src="js/todo-list.js"></script>
+
+</body>
+</html>
